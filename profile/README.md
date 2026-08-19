@@ -34,7 +34,7 @@ The canonical map builder is headless and endpoint-driven. It produces portable 
 
 ### Fire evolution
 
-Observed, reconstructed, interpreted, simulated and predicted states remain separate. Unknown intervals stay unknown instead of being silently interpolated.
+Observed, reconstructed, interpolated, simulated and predicted states remain separate. Unknown intervals stay unknown instead of being silently filled.
 
 ### Replay and research
 
@@ -44,14 +44,35 @@ FireViewer aims to preserve enough provenance, hashes, model/tool revisions and 
 
 | Component | Responsibility |
 | --- | --- |
-| **Documentation** | Architecture, status, safety, reproducibility, roadmap and partnerships. |
+| **Documentation** | Architecture, status, safety, reproducibility and roadmap. |
+| **Models** | Public model/dataset inventory, lifecycle, benchmark evidence and machine-readable registries. |
 | **Frontend** | Contribution, human review and public 2D/3D exploration. |
 | **Backend** | Incident registry, evidence, orchestration, audit and publication. |
 | **AI worker** | Private analysis, visual anchors, localisation attempts and abstention. |
 | **Spatial** | Headless map builder, geographic packages and temporal perimeter layers. |
 | **SDG** | Optional synthetic-data and simulation research. |
 
-Models and datasets are published through the [FireViewer organisation on Hugging Face](https://huggingface.co/fireviewer).
+- Documentation: <https://github.com/fireviewer/Fireviewer_doc>
+- Model/data index: <https://github.com/fireviewer/models>
+- Hugging Face: <https://huggingface.co/fireviewer>
+
+## Models and datasets
+
+The main public showcase follows the current FireViewer inventory rather than surfacing every historical artifact equally.
+
+Current model work is represented by **eight active Hugging Face checkpoints** across fire/smoke detection, segmentation/representation research and visual pointing.
+
+Current public data highlights include:
+
+- `fire-smoke-detection-corpus-v1`;
+- `fire-smoke-pointing-ground-v1`;
+- `prithvi-burnscars-training-dataset-v1`;
+- `dinov3-cross-view-fireviewer-v1-dataset`;
+- `simple-measured-scenes-v1` for measured spatial map builds.
+
+Historical `firewarning-*` resources and older simulation/Omniverse packs are retained for compatibility, provenance and reproducibility but are **not promoted as the current primary FireViewer datasets**.
+
+See the reviewed [Hugging Face inventory](https://github.com/fireviewer/models/blob/main/docs/HUGGING_FACE_INVENTORY.md) for the exact current/restricted/legacy classification.
 
 ## Looking for support and collaborators
 
@@ -79,4 +100,4 @@ Research, infrastructure support, sponsorship, provenance, security or data-remo
 
 ### En français
 
-FireViewer est une infrastructure ouverte de **documentation des incendies, reconstruction spatiale, suivi temporel et étude reproductible après événement**. Le projet cherche des partenaires techniques, scientifiques et infrastructure pour franchir les étapes de validation difficiles à financer seul.
+FireViewer est une infrastructure ouverte de **documentation des incendies, reconstruction spatiale, suivi temporel et étude reproductible après événement**. Les ressources historiques restent disponibles pour la traçabilité, mais la vitrine principale privilégie les modèles, datasets et builds spatiaux qui représentent l'état actuel du projet.
