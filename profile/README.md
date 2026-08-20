@@ -60,12 +60,11 @@ FireViewer aims to preserve enough provenance, hashes, model/tool revisions and 
 
 The main public showcase follows the current FireViewer inventory rather than surfacing every historical artifact equally.
 
-Current model work is represented by **eight active Hugging Face checkpoints** across fire/smoke detection, segmentation/representation research and visual pointing.
+Current model work is represented by **seven active Hugging Face checkpoints** across fire/smoke detection and segmentation/representation research.
 
 Current public data highlights include:
 
 - `fire-smoke-detection-corpus-v1`;
-- `fire-smoke-pointing-ground-v1`;
 - `prithvi-burnscars-training-dataset-v1`;
 - `dinov3-cross-view-fireviewer-v1-dataset`;
 - `simple-measured-scenes-v1` for measured spatial map builds.
