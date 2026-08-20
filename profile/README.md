@@ -56,22 +56,7 @@ FireViewer aims to preserve enough provenance, hashes, model/tool revisions and 
 - Model/data index: <https://github.com/fireviewer/models>
 - Hugging Face: <https://huggingface.co/fireviewer>
 
-## Models and datasets
-
-The main public showcase follows the current FireViewer inventory rather than surfacing every historical artifact equally.
-
-Current model work is represented by **seven active Hugging Face checkpoints** across fire/smoke detection and segmentation/representation research.
-
-Current public data highlights include:
-
-- `fire-smoke-detection-corpus-v1`;
-- `prithvi-burnscars-training-dataset-v1`;
-- `dinov3-cross-view-fireviewer-v1-dataset`;
-- `simple-measured-scenes-v1` for measured spatial map builds.
-
 Historical `firewarning-*` resources and older simulation/Omniverse packs are retained for compatibility, provenance and reproducibility but are **not promoted as the current primary FireViewer datasets**.
-
-See the reviewed [Hugging Face inventory](https://github.com/fireviewer/models/blob/main/docs/HUGGING_FACE_INVENTORY.md) for the exact current/restricted/legacy classification.
 
 ## Looking for support and collaborators
 
