@@ -1,80 +1,79 @@
 # FireViewer
 
-**Infrastructure open source pour l’observation documentée des incendies, la
-reconstruction spatiale, le suivi temporel et l’étude reproductible après
-événement.**
+**Open-source infrastructure for documented wildfire observation, spatial
+reconstruction, temporal tracking, and reproducible post-event study.**
 
-FireViewer est un projet indépendant de recherche et d’ingénierie maintenu par
-**Unicorn Who Dev**. Il relie les sources, les observations, leur provenance,
-des analyses automatisées et une revue humaine afin que l’incertitude reste
-visible et qu’un événement puisse être réétudié sans transformer une hypothèse
-en fait.
+FireViewer is an independent research and engineering project maintained by
+**Unicorn Who Dev**. It connects sources, observations, provenance, automated
+analysis, and human review so that uncertainty remains visible and an event can
+be studied again without turning a hypothesis into a fact.
 
-> FireViewer n’est ni un service d’alerte, ni une source officielle, ni un outil
-> de commandement, ni un prédicteur certifié de propagation. En cas d’urgence,
-> suivre les autorités et services compétents.
+> FireViewer is not an alert service, an official source, a command tool, or a
+> certified wildfire-propagation predictor. In an emergency, follow the
+> guidance of the relevant authorities and emergency services.
 
-## Ce que le projet construit
+## What the project is building
 
 ```text
-sources + observations documentées
+sources + documented observations
               ↓
-provenance + éléments de preuve
+provenance + evidence
               ↓
-analyse automatisée / abstention explicite
+automated analysis / explicit abstention
               ↓
-revue humaine
+human review
               ↓
-carte spatiale reproductible + états temporels revus
+reproducible spatial map build + reviewed temporal states
               ↓
-exploration publique et études après événement
+public exploration and post-event studies
 ```
 
-La chaîne de cartographie canonique est sans interface et pilotée par endpoints.
-Elle reste distincte des couches de visualisation, de la simulation et de toute
-prédiction. Les observations, reconstructions, interpolations, simulations et
-prédictions ne sont jamais confondues.
+The canonical mapping pipeline is headless and endpoint-driven. It remains
+separate from visualisation layers, simulation, and any prediction. Observations,
+reconstructions, interpolations, simulations, and predictions are never treated
+as the same kind of result.
 
-## Dépôts publics
+## Public repositories
 
-| Dépôt | Rôle public |
+| Repository | Public role |
 | --- | --- |
-| [Fireviewer_doc](https://github.com/fireviewer/Fireviewer_doc) | Documentation canonique : périmètre, architecture, sécurité, statut, contrats et feuille de route. |
-| [models](https://github.com/fireviewer/models) | Registre public léger des ressources visibles sur Hugging Face ; aucun poids, cache ou dataset n’y est copié. |
-| [fireviewer-frontend](https://github.com/fireviewer/fireviewer-frontend) | Contribution, revue humaine et exploration publique des événements. |
-| [fireviewer-backend](https://github.com/fireviewer/fireviewer-backend) | Registre d’incidents, preuves, audit, orchestration et publication. |
-| [fireviewer-ai-worker](https://github.com/fireviewer/fireviewer-ai-worker) | Analyse privée, repères visuels, tentatives de localisation et abstention. |
-| [fireviewer-spatial](https://github.com/fireviewer/fireviewer-spatial) | Cartes spatiales, paquets géographiques et couches temporelles. |
-| [fireviewer-sdg](https://github.com/fireviewer/fireviewer-sdg) | Recherche séparée sur données synthétiques et simulation. |
+| [Fireviewer_doc](https://github.com/fireviewer/Fireviewer_doc) | Canonical documentation: scope, architecture, security, status, contracts, and roadmap. |
+| [models](https://github.com/fireviewer/models) | Lightweight public registry of resources visible on Hugging Face; no weights, caches, or datasets are copied into it. |
+| [fireviewer-frontend](https://github.com/fireviewer/fireviewer-frontend) | Contribution, human review, and public event exploration. |
+| [fireviewer-backend](https://github.com/fireviewer/fireviewer-backend) | Incident registry, evidence, audit, orchestration, and publication. |
+| [fireviewer-ai-worker](https://github.com/fireviewer/fireviewer-ai-worker) | Private analysis, visual anchors, localisation attempts, and abstention. |
+| [fireviewer-spatial](https://github.com/fireviewer/fireviewer-spatial) | Spatial maps, geographic packages, and temporal layers. |
+| [fireviewer-sdg](https://github.com/fireviewer/fireviewer-sdg) | Separate research on synthetic data and simulation. |
 
-Les cartes de modèles, les poids publiés et les cartes de datasets font autorité
-sur [Hugging Face](https://huggingface.co/fireviewer). Le registre GitHub
-documente seulement ce qui est publiquement vérifiable à une date donnée ; il ne
-présente pas une ressource comme déployée, qualifiée ou opérationnelle par défaut.
+Model cards, published weights, and dataset cards on
+[Hugging Face](https://huggingface.co/fireviewer) are authoritative. The GitHub
+registry documents only what is publicly verifiable at a given time; it does not
+present a resource as deployed, qualified, or operational by default.
 
-## Documentation publique et travail local
+## Public documentation and local working material
 
-GitHub contient les documents destinés à comprendre, contribuer et vérifier le
-projet : documentation canonique, contrats, code et guides portables. Les notes
-de travail, chemins de machines, journaux bruts, résultats non qualifiés,
-configurations de fournisseurs, preuves privées et exports restent locaux et ne
-sont jamais copiés dans les dépôts publics.
+GitHub contains material intended to explain, contribute to, and verify the
+project: canonical documentation, contracts, code, and portable guides. Working
+notes, machine paths, raw logs, unqualified results, provider configuration,
+private evidence, and exports remain local and are never copied into public
+repositories.
 
-La règle complète est dans la
-[politique de documentation](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/REPOSITORY_DOCUMENTATION_POLICY.md).
+The complete rule is in the
+[documentation policy](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/REPOSITORY_DOCUMENTATION_POLICY.md).
 
-## État et contribution
+## Status and contribution
 
-Le projet est en développement. Une présence de code, de modèle ou de test local
-ne vaut pas preuve de déploiement, de précision géographique ou de qualification
-scientifique. Les contributions sur le code, les tests, l’accessibilité, la
-cartographie, la provenance et l’évaluation sont bienvenues.
+The project is under development. The presence of code, a model, or a local test
+does not prove deployment, geographic accuracy, or scientific qualification.
+Contributions to code, testing, accessibility, mapping, provenance, and
+evaluation are welcome.
 
-Ne pas utiliser GitHub pour signaler une urgence ou demander des secours.
+Do not use GitHub to report an emergency or request assistance.
 
-## Liens
+## Links
 
-- [Documentation du projet](https://github.com/fireviewer/Fireviewer_doc)
-- [Registre public des modèles et datasets](https://github.com/fireviewer/models)
-- [Organisation Hugging Face](https://huggingface.co/fireviewer)
-- Contact recherche, infrastructure, sécurité, provenance ou retrait de données : **unicornwhodev@gmail.com**
+- [Project documentation](https://github.com/fireviewer/Fireviewer_doc)
+- [Public model and dataset registry](https://github.com/fireviewer/models)
+- [Hugging Face organisation](https://huggingface.co/fireviewer)
+- Research, infrastructure, security, provenance, or data-removal contact:
+  **unicornwhodev@gmail.com**
