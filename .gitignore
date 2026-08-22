@@ -2,6 +2,13 @@
 .env.*
 !.env.example
 
+# Working documentation is local-only.
+.local/
+docs/local/
+docs/work/
+docs/private/
+profile/local/
+
 artifacts/
 datasets/
 media/

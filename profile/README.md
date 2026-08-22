@@ -1,87 +1,80 @@
 # FireViewer
 
-**Open infrastructure for wildfire observation, spatial reconstruction, temporal tracking and reproducible post-event analysis.**
+**Infrastructure open source pour l’observation documentée des incendies, la
+reconstruction spatiale, le suivi temporel et l’étude reproductible après
+événement.**
 
-FireViewer is an independent open-source research and engineering project maintained by **Unicorn Who Dev**.
+FireViewer est un projet indépendant de recherche et d’ingénierie maintenu par
+**Unicorn Who Dev**. Il relie les sources, les observations, leur provenance,
+des analyses automatisées et une revue humaine afin que l’incertitude reste
+visible et qu’un événement puisse être réétudié sans transformer une hypothèse
+en fait.
 
-The project combines geospatial processing, provenance-aware evidence management, AI-assisted analysis, human review and portable spatial/temporal packages so that wildfire incidents can be inspected while active and studied reproducibly afterwards.
+> FireViewer n’est ni un service d’alerte, ni une source officielle, ni un outil
+> de commandement, ni un prédicteur certifié de propagation. En cas d’urgence,
+> suivre les autorités et services compétents.
 
-> FireViewer is not an emergency alert service, an official wildfire source, a command tool or a certified propagation predictor.
-
-## What we are building
+## Ce que le projet construit
 
 ```text
-sources + observations
-        ↓
-provenance + evidence
-        ↓
-AI analysis / localisation / abstention
-        ↓
-human review
-        ↓
-reproducible spatial map build
-        +
-reviewed temporal fire states
-        ↓
-public exploration / replay / datasets / post-event studies
+sources + observations documentées
+              ↓
+provenance + éléments de preuve
+              ↓
+analyse automatisée / abstention explicite
+              ↓
+revue humaine
+              ↓
+carte spatiale reproductible + états temporels revus
+              ↓
+exploration publique et études après événement
 ```
 
-### Spatial reconstruction
+La chaîne de cartographie canonique est sans interface et pilotée par endpoints.
+Elle reste distincte des couches de visualisation, de la simulation et de toute
+prédiction. Les observations, reconstructions, interpolations, simulations et
+prédictions ne sont jamais confondues.
 
-The canonical map builder is headless and endpoint-driven. It produces portable OpenUSD/Blender map packages from measured geographic inputs on a Lambert-93 tile grid.
+## Dépôts publics
 
-**FireViewer core no longer depends on Unity or NVIDIA Omniverse.** Omniverse can still be used in optional synthetic-data R&D inside the SDG workstream.
-
-### Fire evolution
-
-Observed, reconstructed, interpolated, simulated and predicted states remain separate. Unknown intervals stay unknown instead of being silently filled.
-
-### Replay and research
-
-FireViewer aims to preserve enough provenance, hashes, model/tool revisions and human decisions to reopen an incident later and use it for reproducible post-event studies, datasets and benchmarks.
-
-## Repositories
-
-| Component | Responsibility |
+| Dépôt | Rôle public |
 | --- | --- |
-| **Documentation** | Architecture, status, safety, reproducibility and roadmap. |
-| **Models** | Public model/dataset inventory, lifecycle, benchmark evidence and machine-readable registries. |
-| **Frontend** | Contribution, human review and public 2D/3D exploration. |
-| **Backend** | Incident registry, evidence, orchestration, audit and publication. |
-| **AI worker** | Private analysis, visual anchors, localisation attempts and abstention. |
-| **Spatial** | Headless map builder, geographic packages and temporal perimeter layers. |
-| **SDG** | Optional synthetic-data and simulation research. |
+| [Fireviewer_doc](https://github.com/fireviewer/Fireviewer_doc) | Documentation canonique : périmètre, architecture, sécurité, statut, contrats et feuille de route. |
+| [models](https://github.com/fireviewer/models) | Registre public léger des ressources visibles sur Hugging Face ; aucun poids, cache ou dataset n’y est copié. |
+| [fireviewer-frontend](https://github.com/fireviewer/fireviewer-frontend) | Contribution, revue humaine et exploration publique des événements. |
+| [fireviewer-backend](https://github.com/fireviewer/fireviewer-backend) | Registre d’incidents, preuves, audit, orchestration et publication. |
+| [fireviewer-ai-worker](https://github.com/fireviewer/fireviewer-ai-worker) | Analyse privée, repères visuels, tentatives de localisation et abstention. |
+| [fireviewer-spatial](https://github.com/fireviewer/fireviewer-spatial) | Cartes spatiales, paquets géographiques et couches temporelles. |
+| [fireviewer-sdg](https://github.com/fireviewer/fireviewer-sdg) | Recherche séparée sur données synthétiques et simulation. |
 
-- Documentation: <https://github.com/fireviewer/Fireviewer_doc>
-- Model/data index: <https://github.com/fireviewer/models>
-- Hugging Face: <https://huggingface.co/fireviewer>
+Les cartes de modèles, les poids publiés et les cartes de datasets font autorité
+sur [Hugging Face](https://huggingface.co/fireviewer). Le registre GitHub
+documente seulement ce qui est publiquement vérifiable à une date donnée ; il ne
+présente pas une ressource comme déployée, qualifiée ou opérationnelle par défaut.
 
-Historical `firewarning-*` resources and older simulation/Omniverse packs are retained for compatibility, provenance and reproducibility but are **not promoted as the current primary FireViewer datasets**.
+## Documentation publique et travail local
 
-## Looking for support and collaborators
+GitHub contient les documents destinés à comprendre, contribuer et vérifier le
+projet : documentation canonique, contrats, code et guides portables. Les notes
+de travail, chemins de machines, journaux bruts, résultats non qualifiés,
+configurations de fournisseurs, preuves privées et exports restent locaux et ne
+sont jamais copiés dans les dépôts publics.
 
-FireViewer is currently maintained with limited independent resources. The project is looking for:
+La règle complète est dans la
+[politique de documentation](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/REPOSITORY_DOCUMENTATION_POLICY.md).
 
-- GPU and CPU compute credits;
-- object-storage and bandwidth support;
-- geospatial / remote-sensing collaboration;
-- wildfire-domain review;
-- reproducible benchmark and evaluation support;
-- research partnerships;
-- grants or sponsorship that can fund infrastructure and sustained development.
+## État et contribution
 
-Support does not buy influence over scientific conclusions or publication decisions.
+Le projet est en développement. Une présence de code, de modèle ou de test local
+ne vaut pas preuve de déploiement, de précision géographique ou de qualification
+scientifique. Les contributions sur le code, les tests, l’accessibilité, la
+cartographie, la provenance et l’évaluation sont bienvenues.
 
-See the canonical [Project Overview](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/PROJECT_OVERVIEW.md), [Funding Brief](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/FUNDING_BRIEF.md) and [Support & Partnerships](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/SUPPORT_AND_PARTNERSHIPS.md).
+Ne pas utiliser GitHub pour signaler une urgence ou demander des secours.
 
-## Contact
+## Liens
 
-Research, infrastructure support, sponsorship, provenance, security or data-removal requests:
-
-**unicornwhodev@gmail.com**
-
----
-
-### En français
-
-FireViewer est une infrastructure ouverte de **documentation des incendies, reconstruction spatiale, suivi temporel et étude reproductible après événement**. Les ressources historiques restent disponibles pour la traçabilité, mais la vitrine principale privilégie les modèles, datasets et builds spatiaux qui représentent l'état actuel du projet.
+- [Documentation du projet](https://github.com/fireviewer/Fireviewer_doc)
+- [Registre public des modèles et datasets](https://github.com/fireviewer/models)
+- [Organisation Hugging Face](https://huggingface.co/fireviewer)
+- Contact recherche, infrastructure, sécurité, provenance ou retrait de données : **unicornwhodev@gmail.com**
