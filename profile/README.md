@@ -1,79 +1,88 @@
 # FireViewer
 
-**Open-source infrastructure for documented wildfire observation, spatial
-reconstruction, temporal tracking, and reproducible post-event study.**
+**Evidence-centred infrastructure for documenting, reviewing, mapping, and
+studying wildfire events.**
 
 FireViewer is an independent research and engineering project maintained by
-**Unicorn Who Dev**. It connects sources, observations, provenance, automated
-analysis, and human review so that uncertainty remains visible and an event can
-be studied again without turning a hypothesis into a fact.
+**Unicorn Who Dev**. It connects public sources, authorised contributions,
+official geographic products, deterministic calculations, machine-assisted
+analysis, and human review while preserving provenance and uncertainty.
 
-> FireViewer is not an alert service, an official source, a command tool, or a
-> certified wildfire-propagation predictor. In an emergency, follow the
-> guidance of the relevant authorities and emergency services.
+> FireViewer is not an emergency alert service, an official wildfire source,
+> an incident-command tool, or a certified fire-propagation predictor. In an
+> emergency, follow the relevant authorities and emergency services.
 
-## What the project is building
+## How the system is designed
 
 ```text
-sources + documented observations
-              ↓
-provenance + evidence
-              ↓
-automated analysis / explicit abstention
-              ↓
-human review
-              ↓
-reproducible spatial map build + reviewed temporal states
-              ↓
-public exploration and post-event studies
+sources and authorised media
+            |
+            v
+evidence tickets and visual observations
+            |
+            v
+deterministic geographic hypotheses
+            |
+            v
+versioned event evidence and history
+            |
+            v
+multimodal assessment and explicit abstention
+            |
+            v
+policy gate, human review, and versioned publication
 ```
 
-The canonical mapping pipeline is headless and endpoint-driven. It remains
-separate from visualisation layers, simulation, and any prediction. Observations,
-reconstructions, interpolations, simulations, and predictions are never treated
-as the same kind of result.
+Visual detectors provide boxes and scores; they do not create GPS truth. A
+separate geographic stage uses the upload position, camera metadata, terrain,
+maps, satellite references, and earlier reviewed event states to propose
+candidate points. The final multimodal stage judges those candidates and may
+accept, reject, or abstain. It cannot silently overwrite the original point.
 
-## Public repositories
+Automatic-publication eligibility requires an accepted result, calibrated
+confidence strictly above 0.85, a managed multimodal provider, and no missing
+required evidence or hard contradiction. Other results require human review;
+a correction is stored as a competing JSON object with its own evidence trail.
 
-| Repository | Public role |
+## Publicly accessible resources
+
+| Resource | Role |
 | --- | --- |
-| [Fireviewer_doc](https://github.com/fireviewer/Fireviewer_doc) | Canonical documentation: scope, architecture, security, status, contracts, and roadmap. |
-| [models](https://github.com/fireviewer/models) | Lightweight public registry of resources visible on Hugging Face; no weights, caches, or datasets are copied into it. |
-| [fireviewer-frontend](https://github.com/fireviewer/fireviewer-frontend) | Contribution, human review, and public event exploration. |
-| [fireviewer-backend](https://github.com/fireviewer/fireviewer-backend) | Incident registry, evidence, audit, orchestration, and publication. |
-| [fireviewer-ai-worker](https://github.com/fireviewer/fireviewer-ai-worker) | Private analysis, visual anchors, localisation attempts, and abstention. |
-| [fireviewer-spatial](https://github.com/fireviewer/fireviewer-spatial) | Spatial maps, geographic packages, and temporal layers. |
-| [fireviewer-sdg](https://github.com/fireviewer/fireviewer-sdg) | Separate research on synthetic data and simulation. |
+| [Fireviewer_doc](https://github.com/fireviewer/Fireviewer_doc) | Canonical project, architecture, safety, data-governance, and current-status documentation. |
+| [fireviewer-ai-worker](https://github.com/fireviewer/fireviewer-ai-worker) | Evidence acquisition, visual processing, geographic hypotheses, provider adapters, and point assessment. |
+| [fireviewer-spatial](https://github.com/fireviewer/fireviewer-spatial) | Deterministic map packages, observed temporal layers, provenance, and spatial validation. |
+| [fireviewer-sdg](https://github.com/fireviewer/fireviewer-sdg) | Synthetic-data and simulation research, kept separate from real-event evidence. |
+| [FireViewer on Hugging Face](https://huggingface.co/fireviewer) | Authoritative public model and dataset cards, revisions, weights, and hosted artifacts. |
 
-Model cards, published weights, and dataset cards on
-[Hugging Face](https://huggingface.co/fireviewer) are authoritative. The GitHub
-registry documents only what is publicly verifiable at a given time; it does not
-present a resource as deployed, qualified, or operational by default.
+Some implementation repositories are currently private. They are described in
+the [repository guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/REPOSITORIES.md)
+without being presented as publicly accessible.
 
-## Public documentation and local working material
+## Data and safety
 
-GitHub contains material intended to explain, contribute to, and verify the
-project: canonical documentation, contracts, code, and portable guides. Working
-notes, machine paths, raw logs, unqualified results, provider configuration,
-private evidence, and exports remain local and are never copied into public
-repositories.
+FireViewer keeps source tickets, hashes, derived claims, evidence revisions,
+review decisions, and failure outcomes. The acquisition pipeline is not a
+shadow archive: scraped articles, copied public media, and full transcripts are
+not retained by default. User media requires explicit authorisation for each
+relevant use.
 
-The complete rule is in the
-[documentation policy](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/REPOSITORY_DOCUMENTATION_POLICY.md).
+Observation, reconstruction, simulation, and prediction are distinct result
+types. A model output is derived evidence, not a source, coordinate authority,
+or publication decision.
 
-## Status and contribution
+## Current maturity
 
-The project is under development. The presence of code, a model, or a local test
-does not prove deployment, geographic accuracy, or scientific qualification.
-Contributions to code, testing, accessibility, mapping, provenance, and
-evaluation are welcome.
+FireViewer is an active research MVP. Core contracts and several integration
+paths exist, but the complete real-data flow has not been qualified as an
+unattended production service. Optional paid GPU stages are not assumed active,
+and publication remains guarded. The dated, evidence-based boundary is in the
+[current status](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/STATUS.md).
 
-Do not use GitHub to report an emergency or request assistance.
+## Contribute or contact
 
-## Links
+Contributions to software, accessibility, mapping, provenance, data governance,
+testing, and research validation are welcome. Do not use GitHub to report an
+emergency or request assistance.
 
-- [Project documentation](https://github.com/fireviewer/Fireviewer_doc)
-- [Public model and dataset registry](https://github.com/fireviewer/models)
-- [Hugging Face organisation](https://huggingface.co/fireviewer)
-- Research, infrastructure, security, provenance, or data-removal contact:
-  **unicornwhodev@gmail.com**
+For research, infrastructure, security, provenance, rights, or data-removal
+enquiries, contact **unicornwhodev@gmail.com**.
