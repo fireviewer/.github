@@ -132,12 +132,12 @@ explored or studied.
 They are not generated wildfire boundaries.
 
 The portable map contracts live in
-[`fireviewer-spatial`](https://github.com/fireviewer/fireviewer-spatial). The
-source-only [`fireviewer-unreal`](https://github.com/fireviewer/fireviewer-unreal)
-project provides an Unreal Engine consumer for those contracts. Its Git tree
-does not contain datasets, model weights, imported asset libraries, generated
-maps or reproduction outputs; one invented JSON/GeoJSON incident fixture is
-kept only to document and test the configuration contract.
+[`fireviewer-spatial`](https://github.com/fireviewer/fireviewer-spatial). A
+source-only Unreal Engine consumer is prepared in a separate local working tree,
+but its publication is currently paused. That tree does not contain datasets,
+model weights, imported asset libraries, generated maps or reproduction outputs;
+one invented JSON/GeoJSON incident fixture is kept only to document and test the
+configuration contract.
 
 The Unreal source path is not a claim that a packaged build, cloud worker or
 visual result has been accepted in production.
