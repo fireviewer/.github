@@ -25,11 +25,13 @@ flowchart TD
 
     Q -->|Evidence · satellite · AI| AI["fireviewer-ai-worker"]
     Q -->|Maps · terrain · OpenUSD| SP["fireviewer-spatial"]
+    Q -->|Unreal map consumer| UE["fireviewer-unreal"]
     Q -->|Synthetic data · simulation| SDG["fireviewer-sdg"]
     Q -->|Architecture · documentation| DOC["Fireviewer_doc"]
 
     AI --> CHANGE["Issue or focused change"]
     SP --> CHANGE
+    UE --> CHANGE
     SDG --> CHANGE
     DOC --> CHANGE
 
@@ -43,6 +45,7 @@ The main public repositories are:
 - `Fireviewer_doc`
 - `fireviewer-ai-worker`
 - `fireviewer-spatial`
+- `fireviewer-unreal`
 - `fireviewer-sdg`
 
 Models, datasets, measured maps and other hosted research artifacts are
@@ -119,6 +122,13 @@ Please do not commit:
 - private infrastructure identifiers;
 - copyrighted media without appropriate redistribution rights;
 - raw third-party content merely because it is publicly accessible.
+
+Git repositories are source-only publication surfaces. Do not commit datasets,
+model weights or checkpoints, imported 3D content libraries, generated map
+packages, reproduction outputs, renders, captures, caches or build products.
+Small fixtures must be synthetic and non-personal; the Unreal repository keeps
+one invented JSON/GeoJSON incident configuration example for its public
+contract.
 
 When contributing a dataset, model, map or asset, preserving its origin,
 licence and relevant transformations is part of the contribution.
