@@ -19,34 +19,11 @@ useful.**
 
 ## Where things live
 
-```mermaid
-flowchart TD
-    Q["What do you want to improve?"]
+The public entry points are `Fireviewer_doc` and the organisation profile. Application, worker, contract, laboratory and Unreal source repositories are private. The viewer and association website are separate private repositories.
 
-    Q -->|Evidence · satellite · AI| AI["fireviewer-ai-worker"]
-    Q -->|Maps · terrain · OpenUSD| SP["fireviewer-spatial"]
-    Q -->|Synthetic data · simulation| SDG["fireviewer-sdg"]
-    Q -->|Architecture · documentation| DOC["Fireviewer_doc"]
+Evidence work is split between ingestion, vision, geolocation, supervision and orchestration; the backend retains business authority. `fireviewer-fire-state` owns Part.4 computation and `fireviewer-model-lab` owns training and the model registry. Generic cartography belongs to private `unicornwhodev/map-builder` (UWD).
 
-    AI --> CHANGE["Issue or focused change"]
-    SP --> CHANGE
-    SDG --> CHANGE
-    DOC --> CHANGE
-
-    CHANGE --> TEST["Test what you can"]
-    TEST --> LIMIT["Explain what you did not test"]
-    LIMIT --> REVIEW["Review"]
-```
-
-The main public repositories are:
-
-- `Fireviewer_doc`
-- `fireviewer-ai-worker`
-- `fireviewer-spatial`
-- `fireviewer-sdg`
-
-The source-only Unreal consumer is not in this public list because its
-repository publication is currently paused.
+`fireviewer-spatial`, `fireviewer-sdg` and `models` are historical private archives. `fireviewer-ai-worker` retains compatibility entry points. For the complete current allocation, see the [repository guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/REPOSITORIES.md).
 
 Models, datasets, measured maps and other hosted research artifacts are
 published through the FireViewer Hugging Face organisation.
@@ -126,8 +103,8 @@ Please do not commit:
 Git repositories are source-only publication surfaces. Do not commit datasets,
 model weights or checkpoints, imported 3D content libraries, generated map
 packages, reproduction outputs, renders, captures, caches or build products.
-Small fixtures must be synthetic and non-personal; the local, unpublished
-Unreal working tree keeps one invented JSON/GeoJSON incident configuration
+Small fixtures must be synthetic and non-personal; the private
+Unreal repository keeps one invented JSON/GeoJSON incident configuration
 example for its integration contract.
 
 When contributing a dataset, model, map or asset, preserving its origin,

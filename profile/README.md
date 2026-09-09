@@ -121,30 +121,15 @@ More details:
 
 ## Measured maps and OpenUSD
 
-The Map Builder is a separate part of FireViewer.
+The generic Map Builder is maintained by UWD in a private repository. FireViewer consumes its versioned geography packages and retains incident attachment, access control and publication.
 
-It creates measured geographic environments and portable OpenUSD packages from
-versioned geographic inputs.
+Measured terrain provides spatial context. Naturel and altitude views use the same geometry; dated perimeter, flame/activity and positioned-photo layers remain independent. Terrain publication follows technical checks automatically, while AI/LLM evidence retains human validation.
 
-These environments provide spatial context in which an incident can later be
-explored or studied.
+The existing daily perimeter producer and accepted viewer remain available. Generalized agentic perimeter/photo production and native Unreal acceptance are separate ongoing functional work.
 
-They are not generated wildfire boundaries.
+The former Unity and Blender/Lightning producers are retired. Historical package readers are retained where existing maps need them. The house Asset4Sim/Hunyuan3D pack is excluded; six Quaternius CC0 trees remain separately attributed.
 
-The portable map contracts live in
-[`fireviewer-spatial`](https://github.com/fireviewer/fireviewer-spatial). A
-source-only Unreal Engine consumer is prepared in a separate local working tree,
-but its publication is currently paused. That tree does not contain datasets,
-model weights, imported asset libraries, generated maps or reproduction outputs;
-one invented JSON/GeoJSON incident fixture is kept only to document and test the
-configuration contract.
-
-The Unreal source path is not a claim that a packaged build, cloud worker or
-visual result has been accepted in production.
-
-The environmental asset library is also still relatively small. Improving its
-quality, diversity and reproducibility is one of the next important steps for
-FireViewer.
+The [repository guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/REPOSITORIES.md) describes the private FV components, UWD producer and historical archives. Public documentation and source visibility do not establish scientific or runtime acceptance.
 
 ## Models and datasets
 
