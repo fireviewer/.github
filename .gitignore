@@ -9,6 +9,7 @@ docs/work/
 docs/private/
 profile/local/
 
+# Generated or hosted artifacts do not belong in Git.
 artifacts/
 datasets/
 media/
@@ -27,3 +28,30 @@ weights/
 *.tar
 *.7z
 *.log
+
+# Credentials, local configuration and private-key material.
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+credentials*.json
+service-account*.json
+*service_account*.json
+*.tfstate
+*.tfstate.*
+.terraform/
+kubeconfig*
+*.kubeconfig
+*.ovpn
+*.mobileprovision
+*.provisionprofile
+.npmrc
+.pypirc
+.netrc
+
+.DS_Store
+Thumbs.db

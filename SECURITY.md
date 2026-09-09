@@ -9,7 +9,7 @@ repository.
 
 Otherwise contact:
 
-**unicornwhodev@gmail.com**
+**contact@fire-viewer.fr**
 
 Do not publish vulnerability details in a normal GitHub issue before the report
 has been reviewed.

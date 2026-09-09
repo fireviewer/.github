@@ -25,7 +25,7 @@ other contributors can find it later.
 
 For something requiring private context:
 
-**unicornwhodev@gmail.com**
+**contact@fire-viewer.fr**
 
 ## Security
 
@@ -38,7 +38,7 @@ Follow the project `SECURITY.md`.
 For attribution problems, licensing questions, provenance corrections,
 data-removal requests or concerns involving private evidence, contact:
 
-**unicornwhodev@gmail.com**
+**contact@fire-viewer.fr**
 
 Only send the information needed to identify the affected material.
 

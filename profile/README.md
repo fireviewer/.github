@@ -167,14 +167,12 @@ See:
 
 ## Governance
 
-For now, technical governance is deliberately simple and maintainer-led.
-
-A French non-profit association is being created to give FireViewer a proper
-administrative and financial structure.
-
-The association is meant to help the project survive and grow — not to create
-an artificial layer of technical authority above the people actually working
-on it.
+The French non-profit association FIRE-VIEWER provides administrative and
+financial stewardship for association-controlled resources. Technical
+governance remains maintainer-led while repository ownership, licences and
+pre-association or UWD assets follow their documented allocation and signed
+agreements. Repository placement alone does not transfer intellectual-property
+rights.
 
 The governance should reflect the project that actually exists, not imitate the
 governance of a much larger project we do not have yet.
@@ -193,4 +191,4 @@ results.
 
 For research, infrastructure, collaboration, rights, provenance or security:
 
-**unicornwhodev@gmail.com**
+**contact@fire-viewer.fr**

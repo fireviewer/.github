@@ -59,7 +59,7 @@ locations and third-party media.
 
 If something needs to be handled privately, contact:
 
-**unicornwhodev@gmail.com**
+**contact@fire-viewer.fr**
 
 Do not put sensitive details in a public issue.
 
