@@ -123,11 +123,11 @@ More details:
 
 The generic Map Builder is maintained by UWD in a private repository. FireViewer consumes its versioned geography packages and retains incident attachment, access control and publication.
 
-Measured terrain provides spatial context. Naturel and altitude views use the same geometry; dated perimeter, flame/activity and positioned-photo layers remain independent. Terrain publication follows technical checks automatically, while AI/LLM evidence retains human validation.
+Measured terrain provides spatial context. Natural and altitude views use the same geometry; dated perimeter, flame/activity and positioned-photo layers remain independent. Terrain publication follows technical checks automatically, while AI/LLM evidence retains human validation.
 
 The existing daily perimeter producer and accepted viewer remain available. Generalized agentic perimeter/photo production and native Unreal acceptance are separate ongoing functional work.
 
-The former Unity and Blender/Lightning producers are retired. Historical package readers are retained where existing maps need them. The house Asset4Sim/Hunyuan3D pack is excluded; six Quaternius CC0 trees remain separately attributed.
+Superseded production chains and asset packs are excluded from active production. Only compatibility readers required for already accepted packages remain.
 
 The [repository guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/REPOSITORIES.md) describes the private FV components, UWD producer and historical archives. Public documentation and source visibility do not establish scientific or runtime acceptance.
 
