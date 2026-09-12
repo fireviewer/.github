@@ -1,6 +1,6 @@
 # FireViewer
 
-**Open-source tools to preserve, reconstruct and study wildfire events.**
+**Tools to preserve, reconstruct and study wildfire events.**
 
 FireViewer started during the wildfire in Die, France, the town where I grew
 up and where part of my family still lives.
@@ -192,3 +192,5 @@ results.
 For research, infrastructure, collaboration, rights, provenance or security:
 
 **contact@fire-viewer.fr**
+
+The two website sources and FV application components are private. Public documentation and the organisation profile remain public; the generic Map Builder is private under UWD. See the [current organisation guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ORGANISATION.md).
