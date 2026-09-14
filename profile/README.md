@@ -2,11 +2,10 @@
 
 **Tools to preserve, reconstruct and study wildfire events.**
 
-FireViewer started during the wildfire in Die, France, the town where I grew
-up and where part of my family still lives.
+FireViewer started during the wildfire in Die, France.
 
-At the time I was mainly trying to understand what was happening from scattered
-official information, maps, images, videos and geographic data.
+The initial goal was to understand what was happening from scattered official
+information, maps, images, videos and geographic data.
 
 The project grew from there.
 
