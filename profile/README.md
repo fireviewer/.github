@@ -1,195 +1,43 @@
 # FireViewer
 
-**Tools to preserve, reconstruct and study wildfire events.**
+**Préserver, reconstruire et étudier les incendies de végétation à partir de sources vérifiables.**
 
-FireViewer started during the wildfire in Die, France.
+FireViewer est un MVP de recherche actif, né des travaux autour de l’incendie de Die. Le projet rassemble sources officielles, images autorisées, satellite et données géographiques pour conserver la chronologie et le contexte spatial d’un événement.
 
-The initial goal was to understand what was happening from scattered official
-information, maps, images, videos and geographic data.
+> **observé ≠ reconstruit ≠ simulé ≠ prédit**
 
-The project grew from there.
+FireViewer ne prédit pas la propagation future. Il n’est ni un service d’alerte, ni une source officielle de sécurité civile, ni un outil de commandement. Une détection n’est pas une coordonnée géographique ; les résultats IA sensibles restent soumis à validation humaine.
 
-What started as a way to make sense of one event gradually became an attempt to
-answer a more difficult question:
+## Comprendre le projet
 
-**Can we preserve a wildfire well enough that it can be reopened, checked and
-studied later instead of being reduced to a final map?**
+- [Présentation en une page](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/presentations/PRESENTATION_1_PAGE.md).
+- [Partenaires et financeurs](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/presentations/PRESENTATION_PARTENAIRES_FINANCEURS.md).
+- [Architecture et responsabilités](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ARCHITECTURE.md).
+- [État du projet et limites de réception](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/STATUS.md).
 
-Today FireViewer combines evidence collection, computer vision, satellite
-observations, deterministic geographic processing, daily fire-state
-reconstruction and reproducible OpenUSD environments.
+## Architecture et maturité
 
-Its main rule is simple:
+Collecte et normalisation → preuves versionnées → vision et hypothèses géographiques → recoupement → calcul Fire State/Part.4 → revue humaine → publication dans l’atlas 2D/3D.
 
-> **observed ≠ reconstructed ≠ simulated ≠ predicted**
+Le backend conserve incidents, droits, preuves durables, révisions et décisions. Le Map Builder générique UWD fournit séparément des packages géographiques : une carte mesurée n’est pas une observation incendie. Les terrains suivent leur réception technique propre. L’atlas et ses cartes existent ; leur présence ne qualifie pas tous les nouveaux parcours de bout en bout.
 
-A useful reconstruction does not become an observation just because it looks
-convincing.
+La simulation reste un chantier distinct en attente. Unreal n’est pas une dépendance à introduire dans le site web. Le worker historique reste transitoire ; les nouveaux algorithmes appartiennent aux composants spécialisés.
 
-A model output is not automatically evidence.
+## Dépôts et ressources
 
-And when the available information is not sufficient, `unknown` or `abstain`
-is a better result than invented precision.
+L’[inventaire GitHub du 19 septembre 2026](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ORGANISATION.md) comprend **18 dépôts** : 16 dépôts cœur, institutionnels, infrastructure ou transition et 2 auxiliaires Android (gestion associative et atelier d’annotation). Le producteur UWD reste externe. Les sources applicatives sont privées ; le profil et la documentation sont publics.
 
-> FireViewer is not an emergency alert service, an official wildfire source,
-> an incident-command system or a certified fire-spread predictor.
+[Hugging Face](https://huggingface.co/fireviewer) héberge les modèles, corpus et cartes versionnés. Le [catalogue public documenté](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/HUGGINGFACE.md) distingue 5 modèles et 4 datasets, avec des niveaux de maturité différents. Publication, licence, résultat de benchmark et promotion runtime sont des questions séparées.
 
-## How the pieces fit together
+## Gouvernance et soutien
 
-```mermaid
-flowchart TB
-    SOURCES["Official · public · authorised sources"] --> EVIDENCE["Evidence<br/>time · provenance · rights"]
-    EVIDENCE --> GEO["Deterministic geographic hypotheses"]
-    EVIDENCE --> SAT["Dated satellite observations"]
+L’association française FIRE-VIEWER assure l’administration et la gestion des ressources qu’elle contrôle. Le développement technique est actuellement assuré principalement par un mainteneur. Les actifs antérieurs et les composants UWD restent soumis à leurs licences ou conventions ; le placement d’un dépôt ne transfère pas les droits.
 
-    GEO --> ASSESS["Multimodal assessment<br/>accept · reject · abstain"]
+Les contributions en données, géomatique, recherche, validation, accessibilité, calcul et financement sont utiles. Un soutien ne donne aucune autorité sur les preuves ou les résultats.
 
-    ASSESS --> PART4["Part.4 3.3<br/>daily reconstruction"]
-    SAT --> PART4
-    SEED["Private dated<br/>initial affected area"] --> PART4
+[Contribution](https://github.com/fireviewer/.github/blob/main/CONTRIBUTING.md) · [Gouvernance](https://github.com/fireviewer/Fireviewer_doc/blob/main/GOVERNANCE.md) · [Code de conduite](https://github.com/fireviewer/.github/blob/main/CODE_OF_CONDUCT.md) · [Sécurité](https://github.com/fireviewer/.github/blob/main/SECURITY.md) · [Support](https://github.com/fireviewer/.github/blob/main/SUPPORT.md).
 
-    PART4 --> FROZEN["Frozen state<br/>lineage · uncertainty"]
-    FROZEN --> REVIEW["Review · corrections"]
-    REVIEW --> INCIDENT["Versioned incident archive<br/>2D · 3D · later study"]
+**Site institutionnel : [fire-viewer.fr](https://fire-viewer.fr)**
+**Contact : contact@fire-viewer.fr**
 
-    MAP["Part.1 Map Builder<br/>measured OpenUSD context"] --> INCIDENT
-
-    FROZEN --> EVAL["Isolated evaluation"]
-    REF["Held-out references"] --> EVAL
-```
-
-The separation is intentional.
-
-Evaluation references do not feed reconstruction.
-
-Measured maps do not become reconstructed wildfire state.
-
-Synthetic scenes do not become evidence of real events.
-
-## What exists today
-
-FireViewer is still a research MVP, but a substantial technical foundation
-already exists:
-
-- bounded evidence acquisition and provenance;
-- image and video processing;
-- deterministic geographic hypotheses;
-- satellite evidence from several source families;
-- structured multimodal assessment with explicit abstention;
-- Part.4 3.3 daily reconstruction;
-- versioned probability, provenance and spatial artifacts;
-- reproducible measured-map production;
-- OpenUSD and web-view spatial packages;
-- synthetic-data tooling kept separate from real evidence;
-- public models, datasets and measured-map resources.
-
-The complete real-data path is **not yet qualified as an unattended production
-service**, and the current Part.4 profile remains uncalibrated.
-
-That distinction matters: code existing and something being proven to work
-reliably in the real world are not the same thing.
-
-## Part.4 3.3
-
-The current reconstruction line starts from a private, dated estimate of the
-initially affected area.
-
-That initial contour does **not** mean the whole area is active.
-
-Later admissible observations contribute to daily versions of:
-
-- `affected`
-- `active`
-- `observable`
-- uncertainty
-
-The system keeps probability state, source lineage and revisions instead of
-silently rebuilding history from the latest geometry.
-
-A correction creates another revision. It does not erase the previous one.
-
-Historical reconstruction also respects time: a satellite product available
-today is not automatically considered information that was available at the
-historical date being reconstructed.
-
-More details:
-
-- [Architecture](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ARCHITECTURE.md)
-- [Daily reconstruction](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/RECONSTRUCTION.md)
-- [Current status](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/STATUS.md)
-
-## Measured maps and OpenUSD
-
-The generic Map Builder is maintained by UWD in a private repository. FireViewer consumes its versioned geography packages and retains incident attachment, access control and publication.
-
-Measured terrain provides spatial context. Natural and altitude views use the same geometry; dated perimeter, flame/activity and positioned-photo layers remain independent. Terrain publication follows technical checks automatically, while AI/LLM evidence retains human validation.
-
-The existing daily perimeter producer and accepted viewer remain available. Generalized agentic perimeter/photo production and native Unreal acceptance are separate ongoing functional work.
-
-Superseded production chains and asset packs are excluded from active production. Only compatibility readers required for already accepted packages remain.
-
-The [repository guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/REPOSITORIES.md) describes the private FV components, UWD producer and historical archives. Public documentation and source visibility do not establish scientific or runtime acceptance.
-
-## Models and datasets
-
-FireViewer publishes research models, datasets, measured maps and
-reproducibility material through:
-
-**https://huggingface.co/fireviewer**
-
-Resources can have different states: active, research, restricted, legacy or
-superseded.
-
-Limitations and failed assumptions are useful information too; not every
-experiment needs to be presented as a successful production model.
-
-## Contributing
-
-FireViewer is currently mostly maintained by me, and there is no large
-community behind it yet.
-
-That is fine.
-
-Useful contributions do not need to be large.
-
-Finding a broken OpenUSD package, checking a geographic assumption, testing a
-dataset, improving accessibility, reproducing a bug, correcting documentation
-or showing that one of my approaches is wrong can all help.
-
-See:
-
-- [Contributing](https://github.com/fireviewer/.github/blob/main/CONTRIBUTING.md)
-- [Governance](https://github.com/fireviewer/Fireviewer_doc/blob/main/GOVERNANCE.md)
-- [Code of Conduct](https://github.com/fireviewer/.github/blob/main/CODE_OF_CONDUCT.md)
-- [Security](https://github.com/fireviewer/.github/blob/main/SECURITY.md)
-- [Support](https://github.com/fireviewer/.github/blob/main/SUPPORT.md)
-
-## Governance
-
-The French non-profit association FIRE-VIEWER provides administrative and
-financial stewardship for association-controlled resources. Technical
-governance remains maintainer-led while repository ownership, licences and
-pre-association or UWD assets follow their documented allocation and signed
-agreements. Repository placement alone does not transfer intellectual-property
-rights.
-
-The governance should reflect the project that actually exists, not imitate the
-governance of a much larger project we do not have yet.
-
-## Support and collaboration
-
-FireViewer has so far been developed with limited financial resources and a
-large amount of personal time.
-
-Infrastructure credits, compute, storage, reusable data, technical help,
-scientific review, OpenUSD/geospatial expertise, grants and other forms of
-support can all be useful.
-
-Support does not buy influence over evidence, uncertainty or technical
-results.
-
-For research, infrastructure, collaboration, rights, provenance or security:
-
-**contact@fire-viewer.fr**
-
-The two website sources and FV application components are private. Public documentation and the organisation profile remain public; the generic Map Builder is private under UWD. See the [current organisation guide](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ORGANISATION.md).
+Revue documentaire : 19 septembre 2026. Aucun nouveau test fonctionnel n’est revendiqué par cette actualisation.
