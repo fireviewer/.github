@@ -19,7 +19,7 @@ useful.**
 
 ## Where things live
 
-The public entry points are `Fireviewer_doc` and the organisation profile. Application, worker, contract, laboratory and Unreal source repositories are private. The viewer and association website are separate private repositories.
+The public entry points include `Fireviewer_doc`, the organisation profile and the [eight public domain components](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/OPEN_SOURCE.md): contracts, ingestion, vision, geolocation, supervision, orchestration, fire-state and model-lab. The viewer, association website, backend, Android applications, infrastructure, compatibility worker and Unreal repository remain private.
 
 Evidence work is split between ingestion, vision, geolocation, supervision and orchestration; the backend retains business authority. `fireviewer-fire-state` owns Part.4 computation and `fireviewer-model-lab` owns training and the model registry. Generic cartography belongs to private `unicornwhodev/map-builder` (UWD).
 

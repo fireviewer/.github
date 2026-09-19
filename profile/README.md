@@ -25,7 +25,7 @@ La simulation reste un chantier distinct en attente. Unreal n’est pas une dép
 
 ## Dépôts et ressources
 
-L’[inventaire GitHub du 19 septembre 2026](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ORGANISATION.md) comprend **18 dépôts** : 16 dépôts cœur, institutionnels, infrastructure ou transition et 2 auxiliaires Android (gestion associative et atelier d’annotation). Le producteur UWD reste externe. Les sources applicatives sont privées ; le profil et la documentation sont publics.
+L’[inventaire GitHub du 19 septembre 2026](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ORGANISATION.md) comprend **18 dépôts** : 16 dépôts cœur, institutionnels, infrastructure ou transition et 2 auxiliaires Android (gestion associative et atelier d’annotation). Le producteur UWD reste externe. [Huit composants de domaine sont désormais publics](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/OPEN_SOURCE.md), en plus du profil et de la documentation. Les sites, le backend, les applications Android, l’infrastructure, le worker transitoire et Unreal restent privés.
 
 [Hugging Face](https://huggingface.co/fireviewer) héberge les modèles, corpus et cartes versionnés. Le [catalogue public documenté](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/HUGGINGFACE.md) distingue 5 modèles et 4 datasets, avec des niveaux de maturité différents. Publication, licence, résultat de benchmark et promotion runtime sont des questions séparées.
 
